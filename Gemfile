@@ -14,12 +14,16 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
+gem 'devise'
+gem 'high_voltage', '~> 3.0.0'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara', '~> 2.13.0'
   gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 3.5'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
 end
 
 group :development do

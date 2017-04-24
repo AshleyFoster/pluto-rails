@@ -9,6 +9,29 @@
   </head>
 
   <body>
+    <header>
+      <div class="container">
+        <h1 class="logo">Pluto</h1>
+        <% if user_signed_in?%>
+          <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+          <%# <%= link_to edit_user_registration_path do %1> %>
+            <%# <img class="current-avatar" src="<%= gravatar_url(current_user) %1>"/> %>
+          <%# <% end %1> %>
+        <% else %>
+          <%= link_to "Sign up", new_user_registration_path %> |
+          <%= link_to "Login", new_user_session_path %>
+        <% end %>
+      </div>
+    </header>
+
+    <% if notice %>
+      <p class="notice"><%= notice %></p>
+    <% end %>
+
+    <% if alert %>
+      <p class="alert"><%= alert %></p>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
