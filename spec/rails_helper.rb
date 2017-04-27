@@ -43,9 +43,6 @@ RSpec.configure do |config|
     end
     # Deprecation Warning
     DatabaseCleaner.clean_with(:truncation)
-  end
-
-  config.before(:each) do
     DatabaseCleaner.strategy = :transaction
   end
 
@@ -74,5 +71,12 @@ RSpec.configure do |config|
 
   config.append_after(:each) do
     DatabaseCleaner.clean
+  end
+
+  Shoulda::Matchers.configure do |config|
+    config.integrate do |with|
+      with.test_framework :rspec
+      with.library :rails
+    end
   end
 end

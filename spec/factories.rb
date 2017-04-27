@@ -3,6 +3,11 @@ FactoryGirl.define do
     "email#{n}@factory.com"
   end
 
+  factory :team do
+    name { |n| "Team #{n}" }
+    time { Time.now}
+  end
+
   factory :user do
     email
     password "password"

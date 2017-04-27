@@ -1,0 +1,10 @@
+<div class="container">
+  <%= render 'shared/model_errors', model: @team %>
+
+  <h3>Edit team</h3>
+
+  <%= render 'teams/form' %>
+
+  <%= link_to "delete", @team, method: :delete,
+                              data: { confirm: "You sure?" } %>
+  </div>

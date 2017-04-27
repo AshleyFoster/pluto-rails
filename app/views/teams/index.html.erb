@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="teams">
+    <% if @teams.any? %>
+      <%= render @teams %>
+    <% else %>
+      <p>You have no teams, add a team below</p>
+    <% end %>
+  </div>
+
+  <%= link_to "Create a new team", new_team_path %>
+</div>
