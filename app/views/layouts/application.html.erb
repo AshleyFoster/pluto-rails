@@ -11,12 +11,14 @@
   <body>
     <header>
       <% if user_signed_in?%>
-        <select name="team">
-          <option value="">Select a team</option>
-          <option><%= render 'layouts/teams_dropdown'  %></option>
-        </select>
+        <div class="team-navigation">
+          <select name="team">
+            <option value="">Select a team</option>
+            <option><%= render 'layouts/teams_dropdown'  %></option>
+          </select>
 
-        <%= link_to "all teams", teams_path %>
+          <%= link_to "all teams", teams_path, class: "all-teams" %>
+        </div>
 
         <nav class="right-nav">
           <%= link_to "Logout", destroy_user_session_path, method: :delete %>

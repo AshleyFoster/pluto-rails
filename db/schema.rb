@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170425160314) do
+ActiveRecord::Schema.define(version: 20170517204804) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "standups", force: :cascade do |t|
+    t.text "body"
+    t.bigint "user_id"
+    t.bigint "team_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["team_id"], name: "index_standups_on_team_id"
+    t.index ["user_id"], name: "index_standups_on_user_id"
+  end
 
   create_table "teams", force: :cascade do |t|
     t.string "name"
@@ -38,6 +48,7 @@ ActiveRecord::Schema.define(version: 20170425160314) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

@@ -1,7 +1,13 @@
+/*
+ *= require font-awesome
+ */
 @import "bourbon";
 @import "neat";
 @import "variables";
 
 @import "layout";
 @import "devise_styles";
+@import "home";
 @import "teams";
+@import "standups";
+@import "standup-form";

@@ -8,9 +8,14 @@ FactoryGirl.define do
     time { Time.now}
   end
 
+  factory :standup do
+    standup "MyText"
+  end
+
   factory :user do
     email
     password "password"
     password_confirmation "password"
+    name "Archer"
   end
 end

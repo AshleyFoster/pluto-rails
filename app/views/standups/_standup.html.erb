@@ -1,0 +1,15 @@
+<div class="standup">
+  <div class="user-info">
+    <img class="user-avatar" src="<%= gravatar_url(standup.user.email, 40) %>"/>
+    <div class="meta">
+      <h4 class="name"><%= standup.user.name %></h4>
+      <div class="time">
+        posted at <%= standup.created_at.strftime("%I:%M %p") %>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <%= standup.body %>
+  </div>
+</div>
+

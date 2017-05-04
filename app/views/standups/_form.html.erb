@@ -1,0 +1,16 @@
+<%= form_for [@team, @standup] do |f| %>
+  <div class="standup-form">
+    <label>What have you been up to?</label>
+    <div class="form-group">
+      <%= f.text_field :body, :placeholder => "What did you do yesterday? What is your plan for today?" %>
+    </div>
+
+    <div class="blockers">
+      <label>Is there anything in your way?</label>
+    </div>
+  </div>
+
+  <div class="button">
+    <%= f.submit %>
+  </div>
+<% end %>

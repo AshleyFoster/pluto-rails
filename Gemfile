@@ -18,6 +18,7 @@ gem 'devise'
 gem 'high_voltage', '~> 3.0.0'
 gem 'bourbon'
 gem 'neat'
+gem 'font-awesome-rails'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -27,6 +28,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'database_cleaner'
   gem 'shoulda-matchers', git: 'https://github.com/thoughtbot/shoulda-matchers.git', branch: 'rails-5'
+  gem "capybara-selenium"
 end
 
 group :development do

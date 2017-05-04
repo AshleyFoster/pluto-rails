@@ -4,6 +4,8 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require 'spec_helper'
 require 'rspec/rails'
 require 'database_cleaner'
+require 'capybara/rails'
+require 'support/factory_girl'
 Dir["#{Rails.root}/app/models/**/*.rb"].each do |model|
   load model
 end

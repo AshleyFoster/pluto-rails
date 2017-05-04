@@ -11,7 +11,7 @@ RSpec.feature "user signs out" do
     expect(page).to have_content "Logout"
     click_link 'Logout'
 
-    expect(page).to have_content "Sign up"
+    expect(page).to have_content "Register"
     expect(page).to have_content "Login"
   end
 end
