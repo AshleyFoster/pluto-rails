@@ -10,18 +10,30 @@
 
   <body>
     <header>
-      <div class="container">
-        <h1 class="logo">Pluto</h1>
-        <% if user_signed_in?%>
+      <% if user_signed_in?%>
+        <select name="team">
+          <option value="">Select a team</option>
+          <option><%= render 'layouts/teams_dropdown'  %></option>
+        </select>
+
+        <%= link_to "all teams", teams_path %>
+
+        <nav class="right-nav">
           <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-          <%# <%= link_to edit_user_registration_path do %1> %>
-            <%# <img class="current-avatar" src="<%= gravatar_url(current_user) %1>"/> %>
-          <%# <% end %1> %>
-        <% else %>
-          <%= link_to "Sign up", new_user_registration_path %> |
-          <%= link_to "Login", new_user_session_path %>
+          <%= link_to edit_user_registration_path do %>
+            <img class="current-avatar" src="<%= gravatar_url(current_user.email, 35) %>"/>
+          <% end %>
+        </nav>
+      <% else %>
+        <%= link_to root_path do %>
+          <h1 class="logo">FromPluto</h1>
         <% end %>
-      </div>
+
+        <nav class="right-nav">
+          <%= link_to "Login", new_user_session_path %>
+          <%= link_to "Register", new_user_registration_path %>
+        </nav>
+      <% end %>
     </header>
 
     <% if notice %>

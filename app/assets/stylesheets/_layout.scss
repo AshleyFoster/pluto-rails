@@ -1,0 +1,64 @@
+html, body {
+  background: $white;
+  height: 100%;
+  margin: 0;
+  font-family: "Open Sans","Helvetica","Arial","sans-serif";
+}
+
+header {
+  background-color: $primary;
+  display: flex;
+  flex: 1;
+  font-size: 14px;
+  padding: 20px;
+
+  .logo {
+    color: $white;
+    font-size: 16px;
+    margin: 0;
+  }
+
+  select {
+    background: $dark-purple;
+    border: none;
+    color: $white;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 0;
+    margin-right: $base-spacing;
+    min-width: 220px;
+    outline: none;
+    padding-right: $base-spacing * 2;
+    padding: 11px;
+    width: auto;
+  }
+
+  a {
+    margin-left: $base-spacing;
+    color: $light-gray;
+    text-decoration: none;
+  }
+
+  .current-avatar {
+    border-radius: 50%;
+  }
+
+  .right-nav {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    a {
+      margin-left: $base-spacing;
+      color: $light-gray;
+      text-decoration: none;
+    }
+  }
+}
+
+a {
+  color: $gray;
+  text-decoration: none;
+}

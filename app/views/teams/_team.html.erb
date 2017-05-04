@@ -1,2 +1,10 @@
-<h3><%= link_to team.name, '#' %></h3>
-<%= link_to 'Edit', edit_team_path(team) %>
+<div class="left">
+  <h5 class="team-title"><%= link_to team.name, '#' %></h5>
+  <span class="reminder-time">
+    Standup at <%= team.time.strftime("%I:%M %p") %>
+  </span>
+</div>
+
+<div class="right">
+  <%= link_to 'Edit', edit_team_path(team) %>
+</div>

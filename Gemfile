@@ -16,6 +16,8 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'high_voltage', '~> 3.0.0'
+gem 'bourbon'
+gem 'neat'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

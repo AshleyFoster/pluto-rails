@@ -1,11 +1,23 @@
 <div class="container">
-  <div class="teams">
-    <% if @teams.any? %>
-      <%= render @teams %>
-    <% else %>
-      <p>You have no teams, add a team below</p>
-    <% end %>
+  <div class="team-header">
+    <h1 class="team-header-title">
+      Your Teams
+    </h1>
+
+    <div class="actions">
+      <%= link_to "Create a new team", new_team_path %>
+    </div>
   </div>
 
-  <%= link_to "Create a new team", new_team_path %>
+  <div class="teams">
+    <% if @teams.any? %>
+      <div class="team">
+        <%= render @teams %>
+      </div>
+    <% else %>
+      <div class="no-teams">
+        <p>You have no teams, add a team below</p>
+      </div>
+    <% end %>
+  </div>
 </div>

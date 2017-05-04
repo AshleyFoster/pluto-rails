@@ -1,0 +1,80 @@
+.devise-form {
+  background-color: $light-gray;
+  box-sizing: border-box;
+  border-radius: 4px;
+  margin: 0 auto;
+  margin-top: 72px;
+  padding: 24px;
+  max-width: 550px;
+  max-height: 448px;
+  font-size: 16px;
+
+  label {
+    display: block;
+    font-weight: 600;
+    color: #909089;
+    margin-bottom: 10px;
+  }
+
+  input {
+    border: 1px solid #c5bfd0;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: #828282;
+    font-size: 14px;
+    margin-bottom: 18px;
+    padding: 12px;
+    width: 100%;
+  }
+
+  input:focus {
+    border: 1px solid $primary;
+    outline: none;
+  }
+
+  .actions {
+    max-width: 251px;
+    box-sizing: border-box;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+    line-height: 24px;
+
+    input[type=submit] {
+      text-align: center;
+      margin: 0em 0em 0em 0em;
+      max-width: 127.63px;
+      max-height: 50px;
+      background-color: #6f529d;
+      border: none;
+      border-radius: 4px;
+      color: #fff;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 1;
+      padding: 17px 34px;
+      text-decoration: none;
+      user-select: none;
+      vertical-align: middle;
+      white-space: nowrap;
+    }
+  }
+
+  .alternate-actions {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    line-height: 24px;
+    text-align: right;
+    max-width: 251px;
+    max-height: 50px;
+
+    a {
+      text-align: right;
+      text-decoration: underline;
+    }
+  }
+}
