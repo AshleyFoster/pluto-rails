@@ -17,7 +17,7 @@
             <%= select nil,
               :team,
               @dropdown_teams.map { |team| [team.name, team_path(team)] },
-              { include_blank: "Select a team", selected: (team_path(@team) if @team && @team.id) },
+              { include_blank: "Select a team", selected: (team_path(@team) if @team.try(:persisted)) },
               { class: "team-select" }
             %>
           </div>
