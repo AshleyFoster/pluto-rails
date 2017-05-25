@@ -1,0 +1,26 @@
+.flash-container {
+  font-size: 14px;
+  padding: 9 0;
+
+  &--info {
+    background: $dark-purple;
+  }
+
+  &--danger {
+    background: $red;
+  }
+
+  & + * {
+    margin-top: $large-spacing;
+  }
+
+  & + .full {
+    margin-top: 0;
+  }
+}
+
+.flash {
+  color: #fff;
+  margin: 0;
+  text-align: center;
+}

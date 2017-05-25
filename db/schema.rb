@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170517204804) do
+ActiveRecord::Schema.define(version: 20170522163032) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "blockers", force: :cascade do |t|
+    t.text "body"
+    t.bigint "standup_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["standup_id"], name: "index_blockers_on_standup_id"
+  end
 
   create_table "standups", force: :cascade do |t|
     t.text "body"

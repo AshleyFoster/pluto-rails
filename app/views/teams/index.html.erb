@@ -9,14 +9,13 @@
     </div>
   </div>
 
-  <div class="teams">
+  <div class="listing-teams">
     <% if @teams.any? %>
-      <div class="team">
         <%= render @teams %>
-      </div>
     <% else %>
       <div class="no-teams">
         <p>You have no teams, add a team below</p>
+        <%= link_to "Create a new team", new_team_path %>
       </div>
     <% end %>
   </div>

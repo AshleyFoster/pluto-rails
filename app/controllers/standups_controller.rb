@@ -3,6 +3,7 @@ class StandupsController < ApplicationController
 
   def index
     @standup = @team.standups.build
+    @standup.blockers.build
     @standups = @team.standups.where("created_at >= ?", Time.now.beginning_of_day)
     @todays_standup = find_todays_standup
   end
@@ -26,7 +27,7 @@ class StandupsController < ApplicationController
   end
 
   def standup_params
-    params.require(:standup).permit(:body)
+    params.require(:standup).permit(:body, blockers_attributes: [:body])
   end
 
   def find_todays_standup

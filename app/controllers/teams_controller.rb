@@ -3,6 +3,11 @@ class TeamsController < ApplicationController
     @teams = current_user.teams
   end
 
+  def show
+    team = current_user.teams.find(params[:id])
+    redirect_to team_standups_path(team)
+  end
+
   def new
     @team = Team.new
   end

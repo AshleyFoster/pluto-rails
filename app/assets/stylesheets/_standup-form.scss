@@ -1,36 +1,99 @@
 .new-standup {
-  background: #f6f5f7;
+  background-color: $off-white;
   padding: 34px 0;
-  width: 100%
+  width: 100vw;
+  margin-left: calc(-1 * ((100vw - 100%) / 2));
 }
 
 .standup-form {
+  max-width: 650px;
+  margin: 0 auto;
 
   label {
     color: $medium-gray;
     font-size: 18px;
-    display: block;
-    margin-bottom: 10px;
+    font-weight: normal;
+  }
+  .form-group {
+    textarea {
+      line-height: 1.5em;
+    }
   }
 
-  input {
-    border: 1px solid #c5bfd0;
-    border-radius: 4px;
-    box-sizing: border-box;
-    color: #828282;
+  .standup-form-blocker {
+    margin-bottom: $base-spacing;
+    position: relative;
+
+    &:first-child .remove {
+      display: none;
+    }
+
+    .remove {
+      border-top-right-radius: $base-border-radius;
+      border-bottom-right-radius: $base-border-radius;
+      border-left: 0;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 48px;
+      bottom: 0;
+      right: 0;
+      top: 0;
+      position: absolute;
+      transition: background-color 150ms ease;
+
+      &:hover {
+        background-color: $primary;
+      }
+    }
+
+    input {
+      margin-bottom: 0;
+
+      &:focus + .remove,
+      &:hover + .remove,
+      &:active + .remove, {
+        background-color: $primary;
+      }
+    }
+  }
+
+  .standup-form-add-blocker {
+    border-radius: $base-border-radius;
+    border: 1px dashed #c5bfd0;
+    color: #afafaf;
+    display: inline-block;
     font-size: 14px;
-    margin-bottom: 18px;
-    padding: 12px;
-    width: 100%;
-    flex-direction: column;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-  }
-
-  input:focus {
-    border: 1px solid $primary;
+    margin-bottom: 34px;
+    padding: $base-spacing;
+    width: 95%;
     outline: none;
+
+    &:hover {
+      color: $primary;
+      border-color: $primary;
+    }
   }
+}
+
+input {
+  border: 1px solid #c5bfd0;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #828282;
+  font-size: 14px;
+  margin-bottom: 18px;
+  padding: 12px;
+  width: 100%;
+  flex-direction: column;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+input:focus {
+  border: 1px solid $primary;
+  outline: none;
 }
 
 .button {

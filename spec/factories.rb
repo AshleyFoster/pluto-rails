@@ -1,4 +1,7 @@
 FactoryGirl.define do
+  factory :blocker do
+    body "MyText"
+  end
   sequence :email do |n|
     "email#{n}@factory.com"
   end

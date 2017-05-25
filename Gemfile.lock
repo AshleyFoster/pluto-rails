@@ -66,6 +66,9 @@ GEM
     capybara-selenium (0.0.6)
       capybara
       selenium-webdriver
+    capybara-webkit (1.14.0)
+      capybara (>= 2.3.0, < 2.14.0)
+      json
     childprocess (0.6.3)
       ffi (~> 1.0, >= 1.0.11)
     coffee-rails (4.2.1)
@@ -101,6 +104,7 @@ GEM
     jbuilder (2.6.3)
       activesupport (>= 3.0.0, < 5.2)
       multi_json (~> 1.2)
+    json (2.1.0)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -217,6 +221,10 @@ GEM
       activemodel (>= 5.0)
       bindex (>= 0.4.0)
       railties (>= 5.0)
+    webpacker (1.2)
+      activesupport (>= 4.2)
+      multi_json (~> 1.2)
+      railties (>= 4.2)
     websocket (1.2.4)
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
@@ -232,6 +240,7 @@ DEPENDENCIES
   byebug
   capybara (~> 2.13.0)
   capybara-selenium
+  capybara-webkit
   coffee-rails (~> 4.2)
   database_cleaner
   devise
@@ -254,6 +263,7 @@ DEPENDENCIES
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console (>= 3.3.0)
+  webpacker
 
 BUNDLED WITH
    1.14.6

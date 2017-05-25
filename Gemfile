@@ -19,6 +19,7 @@ gem 'high_voltage', '~> 3.0.0'
 gem 'bourbon'
 gem 'neat'
 gem 'font-awesome-rails'
+gem 'webpacker'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -29,6 +30,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'shoulda-matchers', git: 'https://github.com/thoughtbot/shoulda-matchers.git', branch: 'rails-5'
   gem "capybara-selenium"
+  gem "capybara-webkit"
 end
 
 group :development do

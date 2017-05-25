@@ -46,6 +46,9 @@ RSpec.configure do |config|
     # Deprecation Warning
     DatabaseCleaner.clean_with(:truncation)
     DatabaseCleaner.strategy = :transaction
+
+    `bin/webpack`
+    Webpacker::Manifest.load
   end
 
   config.before(:each, type: :feature) do

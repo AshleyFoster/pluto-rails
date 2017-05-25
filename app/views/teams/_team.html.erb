@@ -1,13 +1,10 @@
-<div class="left">
-  <%= link_to team_standups_path(team) do %>
+
+<%= link_to team_standups_path(team), :class => "team" do %>
+  <div class="left">
     <h5 class="team-title"><%= team.name %></h5>
-  <% end %>
 
-  <span class="reminder-time">
-    Standup at <%= team.time.strftime("%I:%M %p") %>
-  </span>
-</div>
-
-<div class="right">
-  <%= link_to 'Edit', edit_team_path(team) %>
-</div>
+    <span class="reminder-time">
+      Standup at <%= team.time.strftime("%I:%M %p") %>
+    </span>
+  </div>
+<% end %>

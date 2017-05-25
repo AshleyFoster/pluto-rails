@@ -35,15 +35,14 @@ header {
     .all-teams {
       display: inline-block;
       color: $light-gray;
-      text-decoration: none;
 
       &:hover {
-        color: #fff;
+        color: $white;
       }
     }
   }
 
-  select {
+  .team-select {
     appearance: none;
     background: $dark-purple;
     border: none;
@@ -52,49 +51,49 @@ header {
     font-size: 14px;
     font-weight: 600;
     margin-bottom: 0;
-    margin-right: 24px;
+    margin-right: $base-spacing;
     min-width: 220px;
     outline: none;
-    padding-right: 48px;
+    padding-right: 22px;
     padding: 11px;
     position: relative;
     width: auto;
+  }
 
-    .teams-dropdown {
-      position: relative;
-      margin-right: 12px;
-      width: auto;
+  .team-select-wrapper {
+    position: relative;
+    margin-right: 12px;
+    width: auto;
 
-      &::after {
-        border-left: 6px solid transparent;
-        border-right: 6px solid transparent;
-        border-top: 6px solid $primary;
-        clear: both;
-        content: '';
-        height: 0;
-        position: absolute;
-        right: 11px;
-        top: calc(50% - 2.5px);
-        width: 0;
-      }
+    &::after {
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-top: 6px solid $primary;
+      clear: both;
+      content: '';
+      height: 0;
+      position: absolute;
+      right: 11px;
+      top: calc(50% - 2.5px);
+      width: 0;
     }
   }
-}
 
-.current-avatar {
-  border-radius: 50%;
-}
+  .current-avatar {
+    border-radius: 50%;
+  }
 
-.right-nav {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  .right-nav {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 
-  a {
-    margin-left: $base-spacing;
-    color: $light-gray;
-    text-decoration: none;
+    a {
+      margin-left: $base-spacing;
+      color: $light-gray;
+      text-decoration: none;
+    }
   }
 }
 
@@ -116,3 +115,4 @@ h1 {
 h2 {
   color: $gray;
 }
+

@@ -5,20 +5,26 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <header>
       <% if user_signed_in?%>
-        <div class="team-navigation">
-          <select name="team">
-            <option value="">Select a team</option>
-            <option><%= render 'layouts/teams_dropdown'  %></option>
-          </select>
+        <nav class="team-navigation">
+          <div class="team-select-wrapper">
+            <%= select nil,
+              :team,
+              @dropdown_teams.map { |team| [team.name, team_path(team)] },
+              { include_blank: "Select a team", selected: (team_path(@team) if @team && @team.id) },
+              { class: "team-select" }
+            %>
+          </div>
 
           <%= link_to "all teams", teams_path, class: "all-teams" %>
         </div>
+      </nav>
 
         <nav class="right-nav">
           <%= link_to "Logout", destroy_user_session_path, method: :delete %>

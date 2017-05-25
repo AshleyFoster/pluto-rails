@@ -9,6 +9,8 @@ RSpec.feature "user deletes a team" do
     visit edit_team_path(team)
 
     click_link 'delete'
+    alert = page.driver.browser.switch_to.alert
+    alert.accept
 
     expect(page).to have_content 'Team deleted'
     expect(page).not_to have_content('Team 1')
