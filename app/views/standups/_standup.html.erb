@@ -14,12 +14,10 @@
   </div>
 
   <ul class="blockers">
-    <% if standup.blockers.any? %>
-      <% standup.blockers.each do |blocker|%>
-        <div class="blocker">
-          <%= blocker.body %>
-        </div>
-      <% end %>
+    <% standup.blockers.each do |blocker|%>
+      <div class="blocker">
+        <%= blocker.body %>
+      </div>
     <% end %>
   </ul>
 </div>

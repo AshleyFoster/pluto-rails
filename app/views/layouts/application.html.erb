@@ -45,11 +45,15 @@
     </header>
 
     <% if notice %>
-      <p class="notice"><%= notice %></p>
+      <div class="flash-container notice">
+        <p class="flash"><%= notice %></p>
+      </div>
     <% end %>
 
     <% if alert %>
-      <p class="alert"><%= alert %></p>
+      <div class="flash-container alert">
+        <p class="flash"><%= alert %></p>
+      </div>
     <% end %>
 
     <%= yield %>

@@ -1,11 +1,11 @@
-<div class="standups-page">
-  <% if @todays_standup.nil? %>
-    <div class="new-standup">
-      <%= render 'shared/model_errors', model: @standup %>
-      <%= render 'form' %>
-    </div>
-  <% end %>
+<% if @todays_standup.nil? %>
+  <div class="full new-standup">
+    <%= render 'shared/model_errors', model: @standup %>
+    <%= render 'form' %>
+  </div>
+<% end %>
 
+<div class="standups-page">
   <%= render 'calender' %>
 
   <div class="standups-list">

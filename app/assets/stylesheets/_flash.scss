@@ -1,12 +1,13 @@
 .flash-container {
   font-size: 14px;
-  padding: 9 0;
+  margin-top: 0;
+  padding: $base-spacing 0;
 
-  &--info {
+  &.notice {
     background: $dark-purple;
   }
 
-  &--danger {
+  &.alert {
     background: $red;
   }
 

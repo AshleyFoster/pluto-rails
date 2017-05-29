@@ -1,5 +1,5 @@
 class Blocker < ApplicationRecord
   belongs_to :standup
 
-  validates :body, length: { maximum: 50 }
+  validates :body, length: { minimum: 3, maximum: 50 }
 end

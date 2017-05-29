@@ -1,7 +1,22 @@
 <div class="standup-navigation">
+  <div class="prev">
+    <% if @last_day_with_standups.present? %>
+      <%= link_to team_standups_path(@team, date: @last_day_with_standups.strftime("%m-%d-%Y")) do %>
+        <i class="fa fa-chevron-left"></i>
+      <% end %>
+    <% end %>
+  </div>
+
   <div class="today">
     <i class="fa fa-calendar calendar"></i>
-      <%= Date.today.strftime("%B %e, %Y") %>
-    </i>
+    <%= @todays_date.strftime("%B %e, %Y") %>
+  </div>
+
+  <div class="next">
+    <% if @next_day_with_standups.present? %>
+      <%= link_to team_standups_path(@team, date: @next_day_with_standups.strftime("%m-%d-%Y")) do %>
+        <i class="fa fa-chevron-right"></i>
+      <% end %>
+    <% end %>
   </div>
 </div>
