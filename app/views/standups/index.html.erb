@@ -1,22 +1,24 @@
-<% if @todays_standup.nil? %>
-  <div class="full new-standup">
-    <%= render 'shared/model_errors', model: @standup %>
-    <%= render 'form' %>
-  </div>
-<% end %>
+<div class="container">
+  <% if @todays_standup.nil? %>
+    <div class="full new-standup">
+      <%= render 'shared/model_errors', model: @standup %>
+      <%= render 'form' %>
+    </div>
+  <% end %>
 
-<div class="standups-page">
-  <%= render 'calender' %>
+  <div class="standups-page">
+    <%= render 'calender' %>
 
-  <div class="standups-list">
-    <% if @standups.nil? %>
-      <div class="no-standups">
-        <p>Nobody has posted a standup yet!</p>
-      </div>
-    <% else %>
-      <div class="all-standups">
-        <%= render @standups %>
-      </div>
-    <% end %>
+    <div class="standups-list">
+      <% if @standups.nil? %>
+        <div class="no-standups">
+          <p>Nobody has posted a standup yet!</p>
+        </div>
+      <% else %>
+        <div class="all-standups">
+          <%= render @standups %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
