@@ -1,26 +1,24 @@
 <%= form_for [@team, @standup], html: { class: "standup-form" } do |f| %>
-  <div class="standup-form_content">
-    <label>What have you been up to?</label>
-    <div class="form-group">
-      <%= f.text_area :body,
-        class: "standup-form_content-input autogrow",
-        placeholder: "What did you do yesterday? What is your plan for today?",
-        autofocus: true %>
+  <label>What have you been up to?</label>
+  <div class="form-group">
+    <%= f.text_area :body,
+      class: "standup-form_content-input autogrow",
+      placeholder: "What did you do yesterday? What is your plan for today?",
+      autofocus: true %>
 
-      <label>Is there anything in your way?</label>
-      <div class="standup-form_blockers">
-        <%= f.fields_for :blockers do |blocker_fields| %>
-          <div class="standup-form-blocker">
-            <%= blocker_fields.text_field :body, placeholder: "What's in your way?" %>
-            <a href="#" class="remove" tabindex="-1">
-              <i class="fa fa-times"></i>
-            </a>
-          </div>
-        <% end %>
-        <a href="#" class="standup-form-add-blocker">
-          Add a blocker
-        </a>
-      </div>
+    <label>Is there anything in your way?</label>
+    <div class="standup-form_blockers">
+      <%= f.fields_for :blockers do |blocker_fields| %>
+        <div class="standup-form-blocker">
+          <%= blocker_fields.text_field :body, placeholder: "What's in your way?" %>
+          <a href="#" class="remove" tabindex="-1">
+            <i class="fa fa-times"></i>
+          </a>
+        </div>
+      <% end %>
+      <a href="#" class="standup-form-add-blocker">
+        Add a blocker
+      </a>
     </div>
   </div>
 

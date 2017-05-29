@@ -1,22 +1,24 @@
-<div class="teams-page">
-  <div class="team-header">
-    <h1 class="team-header-title">
-      Your Teams
-    </h1>
+<div class="container">
+  <div class="teams-page">
+    <div class="team-header">
+      <h1 class="team-header-title">
+        Your Teams
+      </h1>
 
-    <div class="actions">
-      <%= link_to "Create a new team", new_team_path %>
-    </div>
-  </div>
-
-  <div class="teams-list">
-    <% if @teams.any? %>
-        <%= render @teams %>
-    <% else %>
-      <div class="no-teams">
-        <p>You have no teams, add a team below</p>
+      <div class="actions">
         <%= link_to "Create a new team", new_team_path %>
       </div>
-    <% end %>
+    </div>
+
+    <div class="teams-list">
+      <% if @teams.any? %>
+        <%= render @teams %>
+      <% else %>
+        <div class="no-teams">
+          <p>You have no teams, add a team below</p>
+          <%= link_to "Create a new team", new_team_path %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>

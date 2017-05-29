@@ -33,9 +33,9 @@ select[multiple] {
   box-sizing: border-box;
   color: $medium-gray;
   font-size: 14px;
-  margin-bottom: $base-spacing;
+  margin-bottom: $small-spacing;
   transition: border-color 150ms ease;
-  padding: $base-spacing;
+  padding: $base-spacing / 2;
   width: 100%;
 
   &:hover {
@@ -73,14 +73,14 @@ select[multiple] {
 
 .field-error {
   display: block;
-  margin-top: 6px;
-  margin-bottom: $base-spacing;
+  margin-top: $tiny-spacing / 2;
+  margin-bottom: $small-spacing;
 }
 
 textarea {
   resize: none;
   line-height: 1.5px;
-  padding-bottom: $base-spacing;
+  padding-bottom: $small-spacing;
 }
 
 [type="search"] {
@@ -90,16 +90,16 @@ textarea {
 [type="checkbox"],
 [type="radio"] {
   display: inline;
-  margin-right: $base-spacing / 2;
+  margin-right: $small-spacing / 2;
 }
 
 [type="file"] {
-  margin-bottom: $base-spacing;
+  margin-bottom: $small-spacing;
   width: 100%;
 }
 
 select {
-  margin-bottom: $base-spacing;
+  margin-bottom: $small-spacing;
   max-width: 100%;
   width: auto;
 }

@@ -1,27 +1,31 @@
-<%= form_for(@team) do |f| %>
+<%= form_for @team, html: { class: "team-form" } do |f| %>
   <div class="form-group">
     <%= f.label :name %>
     <%= f.text_field :name, placeholder: "Your team's name" %>
   </div>
 
-  <p>Remind your team to post standup on these days:</p>
+  <label>Remind your team to post standup on these days:</label>
   <div class="reminder-days">
     <% Date::ABBR_DAYNAMES.rotate(1).each do |day| %>
-      <%= f.check_box :days_of_week,
-        { multiple: true, checked: @team.days_of_week.include?(Date::ABBR_DAYNAMES.index(day)) },
-        day.downcase,
-        nil
-      %>
-    <%= day %>
+      <div class="reminder">
+        <%= f.check_box "days_of_week[#{day.downcase}]",
+          { class: "reminder-checkbox", checked: @team.days_of_week.include?(Date::ABBR_DAYNAMES.index(day)) },
+          day.downcase,
+          nil
+        %>
+      <%= f.label "days_of_week[#{day.downcase}]", day, class: "reminder-label" %>
+    </div>
   <% end %>
 </div>
 
-<p>At this time:</p>
+<label>At this time:</label>
 <div class="timezone-time">
-  <%= f.time_select :time %>
+  <div class="time">
+    <%= f.time_select :time %>
+  </div>
 </div>
 
-<div class="button">
+<div class="submit">
   <%= f.submit %>
 </div>
 <% end %>

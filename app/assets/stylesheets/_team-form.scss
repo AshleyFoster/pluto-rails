@@ -1,0 +1,63 @@
+.team-form {
+  .actions {
+    padding-top: 9px;
+  }
+
+  .reminder-days {
+    display: flex;
+    margin-bottom: $small-spacing;
+
+    .reminder {
+      flex: 1;
+      display: inline-block;
+      margin-right: $small-spacing;
+      user-select: none;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      .reminder-checkbox {
+        display: none;
+      }
+
+      .reminder-label {
+        background-color: $light-gray;
+        border-radius: $base-border-radius;
+        cursor: pointer;
+        justify-content: space-between;
+        margin-bottom: 0;
+        padding: 9px;
+        text-align: center;
+      }
+
+      .reminder-checkbox:checked + .reminder-label {
+        background-color: $primary;
+        color: #fff;
+      }
+    }
+  }
+
+  .timezone-time {
+    display: flex;
+    margin-bottom: $small-spacing;
+
+    .time {
+      margin-right: $base-spacing;
+
+      select {
+        display: inline;
+        margin-right: $small-spacing / 4;
+      }
+    }
+
+    select {
+      display: inline-block;
+      margin-bottom: 0;
+    }
+  }
+
+  input[type=submit] {
+    width: auto;
+  }
+}
