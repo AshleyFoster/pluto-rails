@@ -13,12 +13,12 @@ class TeamsController < ApplicationController
   end
 
   def create
-    @team = Team.new(team_params)
-    @team.user = current_user
+    team_creator = TeamCreator.new(current_user, team_params)
 
-    if @team.save
+    if team_creator.save
       redirect_to teams_path, notice: "Team created!"
     else
+      @team = team_creator.team
       flash.now[:alert] = "Unable to create team"
       render 'new'
     end

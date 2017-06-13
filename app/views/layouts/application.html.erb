@@ -26,36 +26,39 @@
         </div>
       </nav>
 
-        <nav class="right-nav">
-          <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-          <%= link_to edit_user_registration_path do %>
-            <img class="current-avatar" src="<%= gravatar_url(current_user.email, 35) %>"/>
-          <% end %>
-        </nav>
-      <% else %>
-        <%= link_to root_path do %>
-          <h1 class="logo">FromPluto</h1>
+      <nav class="right-nav">
+        <% if params[:controller] == 'standups' %>
+          <%= render 'layouts/owner_links' %>
         <% end %>
-
-        <nav class="right-nav">
-          <%= link_to "Login", new_user_session_path %>
-          <%= link_to "Register", new_user_registration_path %>
-        </nav>
+        <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+        <%= link_to edit_user_registration_path do %>
+          <img class="current-avatar" src="<%= gravatar_url(current_user.email, 35) %>"/>
+        <% end %>
+      </nav>
+    <% else %>
+      <%= link_to root_path do %>
+        <h1 class="logo">FromPluto</h1>
       <% end %>
-    </header>
 
-    <% if notice %>
-      <div class="flash-container notice">
-        <p class="flash"><%= notice %></p>
-      </div>
+      <nav class="right-nav">
+        <%= link_to "Login", new_user_session_path %>
+        <%= link_to "Register", new_user_registration_path %>
+      </nav>
     <% end %>
+  </header>
 
-    <% if alert %>
-      <div class="flash-container alert">
-        <p class="flash"><%= alert %></p>
-      </div>
-    <% end %>
+  <% if notice %>
+    <div class="flash-container notice">
+      <p class="flash"><%= notice %></p>
+    </div>
+  <% end %>
 
-    <%= yield %>
-  </body>
+  <% if alert %>
+    <div class="flash-container alert">
+      <p class="flash"><%= alert %></p>
+    </div>
+  <% end %>
+
+  <%= yield %>
+</body>
 </html>

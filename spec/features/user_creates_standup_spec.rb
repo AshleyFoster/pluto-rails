@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.feature "user creates a standup" do
   scenario "creates a standup inside a team for the user", :js => true do
     user = create(:user)
-    team = create(:team, name: "Team 1", user: user)
+    team = create(:team, name: "Team 1")
+    team_user = FactoryGirl.create(:team_user, user: user, team: team)
     login_as(user, scope: :user)
 
     visit teams_path

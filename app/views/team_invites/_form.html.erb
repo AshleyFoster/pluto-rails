@@ -1,0 +1,8 @@
+<%= form_for [@team, @team_invite], html: { class: "team-invite-form" } do |f| %>
+  <h1>Add to your team</h1>
+  <%= f.hidden_field :team, value: @team_invite.team_id %>
+  <%= f.text_field :email,
+    class: "team-invite-form-input type=submit",
+    placeholder: "Email to invite",
+    autofocus: true %>
+<% end %>

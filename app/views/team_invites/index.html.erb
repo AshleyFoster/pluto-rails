@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="full new-invite">
+    <%= render 'shared/model_errors', model: @team_invite %>
+    <%= render 'form' %>
+  </div>
+  <div class="members">
+    <div class="members">
+      <h3>Manage your team</h3>
+      <% @team_invites.each do |team_invite| %>
+        <%= render 'team_member', team_invite: team_invite %>
+      <% end %>
+    </div>
+  </div>
+</div>

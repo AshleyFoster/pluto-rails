@@ -39,16 +39,16 @@ header {
 
     .all-teams {
       display: inline-block;
-      color: $light-gray;
+      color: $white;
 
       &:hover {
-        color: $white;
+        color: $light-gray;
       }
     }
   }
 
   .team-select {
-    appearance: none;
+    -webkit-appearance: none;
     background: $dark-purple;
     border: none;
     color: $white;

@@ -1,0 +1,10 @@
+Hello <%= @team_invite.email %>
+
+You have been invited to join <%= @team_invite.team.name %>.
+
+Please follow the link provided to join this team.
+
+<%= new_user_registration_url(invite_token: @team_invite.token) %>
+
+Happy standups,
+fromPluto

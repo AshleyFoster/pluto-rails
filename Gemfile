@@ -5,8 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
-gem 'rails', '~> 5.1.0.rc2'
+gem 'rails', '~> 5.1'
 gem 'pg'
 gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
@@ -19,18 +18,19 @@ gem 'high_voltage', '~> 3.0.0'
 gem 'bourbon'
 gem 'neat'
 gem 'font-awesome-rails'
-gem 'webpacker'
+gem 'webpacker', '~> 3.0'
+gem 'has_secure_token'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara', '~> 2.13.0'
   gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 3.5'
-  gem 'factory_girl_rails'
+  gem 'factory_girl_rails', '~> 4.9'
   gem 'database_cleaner'
   gem 'shoulda-matchers', git: 'https://github.com/thoughtbot/shoulda-matchers.git', branch: 'rails-5'
   gem "capybara-selenium"
-  gem "capybara-webkit"
+  # gem "capybara-webkit"
 end
 
 group :development do

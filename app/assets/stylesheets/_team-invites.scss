@@ -1,0 +1,67 @@
+.container {
+  .full.new-invite {
+    background-color: $off-white;
+    padding: 34px 0;
+    width: 100vw;
+    margin-left: calc(-1 * ((100vw - 100%) / 2));
+
+    .team-invite-form {
+      max-width: 650px;
+      margin: 0 auto;
+
+      h1 {
+        margin-top: $medium-spacing;
+      }
+    }
+  }
+
+  .members {
+    margin-top: $base-spacing;
+
+    h3 {
+      text-align: center;
+    }
+
+    .member {
+      display: flex;
+      justify-content: space-between;
+      border: 1px solid $light-gray;
+      padding: 18px;
+
+      img {
+        border-radius: 50%;
+      }
+
+      .member-email {
+        display: flex;
+        align-items: center;
+      }
+
+      .member-status {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        p {
+          font-size: 16px;
+          margin: 0px;
+        }
+
+        .actions {
+          margin-left: 10px;
+
+          a {
+            display: inline-block;
+            font-size: 14px;
+            color: #a8a8a8;
+
+            &:hover {
+              color: $red;
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+}

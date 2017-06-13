@@ -1,13 +1,26 @@
 FactoryGirl.define do
-  factory :blocker do
-    body "MyText"
-  end
   sequence :email do |n|
     "email#{n}@factory.com"
   end
 
+  factory :team_invite do
+    email
+    team
+    team_user
+  end
+
+  factory :team_user do
+    team
+    user
+    role TeamUser::OWNER
+  end
+
+  factory :blocker do
+    body "MyText"
+  end
+
   factory :team do
-    name { |n| "Team #{n}" }
+    name "MyTeam"
     time { Time.now}
   end
 
@@ -19,6 +32,6 @@ FactoryGirl.define do
     email
     password "password"
     password_confirmation "password"
-    name "Archer"
+    name "Dwight"
   end
 end

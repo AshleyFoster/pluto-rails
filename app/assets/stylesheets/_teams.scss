@@ -53,12 +53,16 @@
 
     .left {
       .team-title {
-        color: $medium-gray;
+        color: $gray;
         font-size: $base-font-size;
         margin-bottom: 0;
         font-weight: 600;
         margin: 0 18px;
         margin-left: 0;
+
+        &:hover {
+          color: $medium-gray;
+        }
       }
       .reminder-time {
         color: #a8a8a8;
