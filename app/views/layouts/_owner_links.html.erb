@@ -1,4 +1,5 @@
 <%= link_to "standups", team_standups_path(@team) %>
+
 <% if current_user.role_for_team(@team) == TeamUser::OWNER %>
   <%= link_to "members", team_team_invites_path(@team) %>
   <%= link_to "settings", edit_team_path(@team) %>

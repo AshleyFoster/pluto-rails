@@ -1,0 +1,9 @@
+<% content_for :content do %>
+  <%= content_for :navigation_links do %>
+    <%= render 'layouts/owner_links' %>
+  <% end %>
+
+  <%= yield %>
+<% end %>
+
+<%= render template: "layouts/application" %>

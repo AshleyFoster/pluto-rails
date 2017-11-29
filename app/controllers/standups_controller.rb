@@ -1,4 +1,6 @@
 class StandupsController < ApplicationController
+  layout 'team'
+
   before_action :find_team
   before_action :get_and_set_date
 

@@ -17,7 +17,7 @@
             <%= select nil,
               :team,
               @dropdown_teams.map { |team| [team.name, team_path(team)] },
-              { include_blank: "Select a team", selected: (team_path(@team) if @team.try(:persisted)) },
+              { include_blank: "Select a team", selected: (team_path(@team) if @team && @team.try(:persisted)) },
               { class: "team-select" }
             %>
           </div>
@@ -27,9 +27,7 @@
       </nav>
 
       <nav class="right-nav">
-        <% if params[:controller] == 'standups' %>
-          <%= render 'layouts/owner_links' %>
-        <% end %>
+        <%= yield(:navigation_links) %>
         <%= link_to "Logout", destroy_user_session_path, method: :delete %>
         <%= link_to edit_user_registration_path do %>
           <img class="current-avatar" src="<%= gravatar_url(current_user.email, 35) %>"/>
@@ -59,6 +57,6 @@
     </div>
   <% end %>
 
-  <%= yield %>
+  <%= content_for?(:content) ? yield(:content) : yield %>
 </body>
 </html>

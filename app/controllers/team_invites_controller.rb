@@ -1,4 +1,5 @@
 class TeamInvitesController < ApplicationController
+  layout 'team'
   before_action :find_team
 
   def index
