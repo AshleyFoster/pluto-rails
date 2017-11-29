@@ -6,7 +6,7 @@ class TeamInviteMailer < ApplicationMailer
 
     mail(
       to: @team_invite.email,
-      subject: "#{@team_invite.team_user.user.name} wants you to join #{@team_invite.team.name} on fromPluto"
+      subject: "#{@team_invite.user.name} wants you to join #{@team_invite.team.name} on fromPluto"
     )
   end
 end

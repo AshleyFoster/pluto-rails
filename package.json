@@ -1,37 +1,9 @@
 {
-  "name": "pluto",
-  "private": true,
   "dependencies": {
     "@rails/webpacker": "^3.0.2",
-    "autoprefixer": "^7.1.1",
-    "babel-core": "^6.24.1",
-    "babel-loader": "7.x",
-    "babel-preset-env": "^1.5.1",
-    "coffee-loader": "^0.7.3",
-    "coffee-script": "^1.12.6",
-    "coffeescript": "1.12.7",
-    "compression-webpack-plugin": "^0.4.0",
-    "css-loader": "^0.28.2",
-    "extract-text-webpack-plugin": "^2.1.0",
-    "file-loader": "^0.11.1",
-    "glob": "^7.1.2",
-    "input-autogrow": "^1.0.2",
-    "jquery": "^3.2.1",
-    "jquery.ns-autogrow": "^1.1.6",
-    "js-yaml": "^3.8.4",
-    "node-sass": "^4.5.3",
-    "path-complete-extname": "^0.1.0",
-    "postcss-loader": "^2.0.5",
-    "postcss-smart-import": "^0.7.0",
-    "precss": "^1.4.0",
-    "rails-erb-loader": "^5.0.1",
-    "sass-loader": "^6.0.5",
-    "style-loader": "^0.18.0",
-    "webpack": "^2.6.0",
-    "webpack-manifest-plugin": "^1.1.0",
-    "webpack-merge": "^4.1.0"
+    "coffeescript": "1.12.7"
   },
   "devDependencies": {
-    "webpack-dev-server": "^2.9.4"
+    "webpack-dev-server": "^2.9.5"
   }
 }

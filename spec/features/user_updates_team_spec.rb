@@ -10,11 +10,12 @@ RSpec.feature "user updates a team" do
     visit '/teams'
 
     find('.team', text: 'Team 1').click
+    click_on('settings')
     fill_in 'Name', :with => 'Team Infinity'
-    # click_button 'Update Team'
+    click_button 'Update Team'
 
-    # expect(page).to have_content 'Team Updated'
-    # expect(page).to have_content 'Team Infinity'
-    # expect(page).not_to have_content('Team 1')
+    expect(page).to have_content 'Team Updated'
+    expect(page).to have_content 'Team Infinity'
+    expect(page).not_to have_content('Team 1')
   end
 end

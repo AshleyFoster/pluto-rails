@@ -6,7 +6,7 @@ FactoryGirl.define do
   factory :team_invite do
     email
     team
-    team_user
+    user
   end
 
   factory :team_user do
