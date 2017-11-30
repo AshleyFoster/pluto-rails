@@ -1,0 +1,9 @@
+<div class="container">
+  <h3>New Team Invitation</h3>
+
+  <%= form_for [@team, @team_invite], html: { class: "team-invite-accept-form"} do |f| %>
+    <h4>Would you like to join "<%= @team.name %>"?</h4>
+    <%= f.submit "Accept" %>
+    <%= f.submit "Decline" %>
+  <% end %>
+</div>

@@ -7,14 +7,19 @@
     <h1>Hello <%= @team_invite.email %></h1>
 
     <p>
-      You have been invited to join <%= @team_invite.team.name %>.
+      You have been invited to join <%= @team_invite.team.name %>
 
-      Please follow the link provided to join this team.
+    <%=
+      link_to "Click here", team_team_invite_url(
+        @team_invite,
+        token: @team_invite.token,
+        user_id: @team_invite.user,
+        team_id: @team_invite.team
+      )
+      %> to join this team.
 
-      <%= new_user_registration_url(invite_token: @team_invite.token) %>
-
-      Happy standups,
-      fromPluto
-    </p>
-  </body>
+    Happy standups,
+    fromPluto
+  </p>
+</body>
 </html>

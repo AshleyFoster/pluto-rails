@@ -7,6 +7,8 @@ class TeamInvite < ApplicationRecord
   has_many :emails
 
   validates :email, presence: true, length: { minimum: 6 }
+  validates :team, presence: true
+  validates :user, presence: true
   validates_uniqueness_of :email, scope: :team_id
 
   def user_exists?

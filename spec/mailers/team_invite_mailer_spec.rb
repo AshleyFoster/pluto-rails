@@ -15,7 +15,7 @@ RSpec.describe TeamInviteMailer, type: :mailer do
       invite = TeamInviteMailer.team_invite(team_invite).deliver_now
 
       expect(invite.subject).to eq(
-        "#{team_invite.user.name} wants you to join #{team_invite.team.name} on fromPluto"
+        "Join #{team_invite.team.name} on fromPluto"
       )
     end
 
@@ -32,6 +32,21 @@ RSpec.describe TeamInviteMailer, type: :mailer do
       invite = TeamInviteMailer.team_invite(team_invite).deliver_now
 
       expect(invite.to).to eq(["pam@art.school"])
+    end
+
+    it 'renders the body of the email' do
+      email = "pam@art.school"
+      user = FactoryGirl.create(:user, name: "Michael")
+      team = FactoryGirl.create(:team, name: "Dunder-Mifflin: Sales")
+      team_invite = FactoryGirl.create(
+        :team_invite,
+        email: email,
+        team: team,
+        user: user
+      )
+      invite = TeamInviteMailer.team_invite(team_invite).deliver_now
+
+      expect(invite.body.encoded).to match("Click")
     end
   end
 end
