@@ -4,15 +4,10 @@
     <%= team_invite.email %>
   </div>
   <div class="member-status">
-    <% if team_invite.email == TeamUser::MEMBER %>
-      <div class="actions">
-        <%= link_to "Remove User", "#" %>
-      </div>
-    <% else %>
-      <p>Pending</p>
-      <div class="actions">
-        <%= link_to "Cancel Invite", "#" %>
-      </div>
-    <% end %>
+    <p>Pending</p>
+    <div class="actions">
+      <%= link_to "Cancel Invite", team_team_invite_path(@team, team_invite),
+        method: :delete %>
+    </div>
   </div>
 </div>

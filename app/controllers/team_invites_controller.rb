@@ -21,6 +21,13 @@ class TeamInvitesController < ApplicationController
     end
   end
 
+  def destroy
+    @team_invite = @team.team_invites.find(params[:id])
+    @team_invite.destroy
+    flash[:notice] = "Invitation has been removed"
+    redirect_to team_team_invites_path
+  end
+
   private
 
   def team_invite_params

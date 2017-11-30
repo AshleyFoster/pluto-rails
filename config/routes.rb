@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :teams do
     resources :standups, only: [:index, :create]
-    resources :team_invites
+    resources :team_invites, only: [:index, :create, :destroy]
   end
 
   authenticated do
