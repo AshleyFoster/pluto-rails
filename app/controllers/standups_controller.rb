@@ -1,6 +1,5 @@
 class StandupsController < ApplicationController
   layout 'team'
-
   before_action :find_team
   before_action :get_and_set_date
 
@@ -64,7 +63,7 @@ class StandupsController < ApplicationController
   def find_last_day_with_standups
     @team.standups
       .where("created_at < ?", @todays_date.beginning_of_day)
-      .order(:created_at)
+      .order(created_at: :desc)
       .limit(1)
       .first
       .try(:created_at)
