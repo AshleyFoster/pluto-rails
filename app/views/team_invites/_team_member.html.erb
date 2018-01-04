@@ -1,13 +1,19 @@
 <div class="member">
-  <%= image_tag  gravatar_url(team_invite.email, 40) %>
+  <%= image_tag  gravatar_url(team_member.email, 40) %>
   <div class="member-email">
-    <%= team_invite.email %>
+    <%= team_member.email %>
   </div>
-  <div class="member-status">
-    <p>Pending</p>
-    <div class="actions">
-      <%= link_to "Cancel Invite", team_team_invite_path(@team, team_invite),
-        method: :delete %>
+
+  <% if team_member.role_for_team(@team) == 'owner' %>
+    <div class="member-status">
+      <p>Team Owner</p>
     </div>
-  </div>
+  <% else %>
+    <div class="member-status">
+      <p>Team Member</p>
+      <div class="actions">
+        <%= link_to "Remove Member", "#" %>
+      </div>
+    </div>
+  <% end %>
 </div>

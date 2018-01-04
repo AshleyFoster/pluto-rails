@@ -5,6 +5,7 @@ class TeamInvitesController < ApplicationController
   def index
     @team_invite = @team.team_invites.build
     @team_invites = @team.team_invites.all
+    @team_members = team_members
   end
 
   def show
@@ -61,5 +62,9 @@ class TeamInvitesController < ApplicationController
 
   def accepted?
     params[:commit] == "Accept"
+  end
+
+  def team_members
+    @team.users.order('created_at')
   end
 end

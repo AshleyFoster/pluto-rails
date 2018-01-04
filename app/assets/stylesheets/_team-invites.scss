@@ -16,7 +16,7 @@
   }
 
   .members {
-    margin-top: $base-spacing;
+    margin: $base-spacing 0;
 
     h3 {
       text-align: center;
@@ -26,7 +26,12 @@
       display: flex;
       justify-content: space-between;
       border: 1px solid $light-gray;
+      border-bottom: none;
       padding: 18px;
+
+      &:last-child {
+        border-bottom: 1px solid $light-gray;
+      }
 
       img {
         border-radius: 50%;
