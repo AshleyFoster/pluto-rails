@@ -1,11 +1,36 @@
-html, body {
+.home-page {
+  display: flex;
+  flex-direction: column;
   background-color: $white;
-}
+  align-items: center;
 
-h1 {
-  text-align: center;
-}
+  .content {
+    padding: $tiny-spacing;
+    text-align: left;
+    max-width: 300px;
 
-.welcome {
-  margin-top: 20px;
+    .title {
+      color: $primary;
+      margin: $tiny-spacing 0;
+    }
+
+    .subtitle {
+      margin: $tiny-spacing 0;
+      margin-top: 0;
+    }
+
+    .intro {
+      font-size: $base-font-size;
+      line-height: 1.2;
+    }
+
+    .services-list {
+      text-align: left;
+
+      li {
+        padding: $tiny-spacing;
+        color: $primary;
+      }
+    }
+  }
 }
