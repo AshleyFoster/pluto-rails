@@ -26,10 +26,37 @@
 
     .services-list {
       text-align: left;
+      margin-bottom: $tiny-spacing;
 
       li {
         padding: $tiny-spacing;
         color: $primary;
+      }
+    }
+
+    .actions {
+      a {
+        font-size: $small-font-size;
+        color: $primary;
+
+        &:hover {
+          color: $dark-purple;
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .alternate-actions {
+      line-height: 24px;
+      margin-top: $tiny-spacing;
+
+      a {
+        text-decoration: underline;
+        color: $gray;
+
+        &:hover {
+          color: $medium-gray;
+        }
       }
     }
   }

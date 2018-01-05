@@ -9,6 +9,12 @@
       <li>Create Teams</li>
       <li>Post and review Standups</li>
       <li>Indicate Blockers</li>
-    </ul>
+    </div>
+    <div class="action">
+      <button><%= link_to "Sign Up!", new_user_registration_path %></button>
+    </div>
+    <div class="alternate-actions">
+      <%= link_to "Login", new_user_session_path %>
+    </div>
   </div>
 </div>
