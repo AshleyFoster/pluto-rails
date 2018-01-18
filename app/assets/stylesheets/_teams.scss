@@ -74,3 +74,10 @@
   }
 }
 
+a.delete {
+  color: $gray;
+
+  &:hover {
+    color: $red;
+  }
+}

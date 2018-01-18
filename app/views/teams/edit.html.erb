@@ -5,6 +5,6 @@
 
   <%= render 'teams/form' %>
 
-  <%= link_to "delete", @team, method: :delete,
-                              data: { confirm: "You sure?" } %>
+  <%= link_to "Delete Team", @team, method: :delete,
+                              data: { confirm: "You sure?" }, class: "delete" %>
   </div>
