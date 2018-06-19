@@ -10,9 +10,13 @@ class StandupsController < ApplicationController
     if params[:date]
       date = Date.strptime(params[:date], "%m-%d-%Y")
       @standups = @team.standups
-        .where("created_at >= ? and created_at <= ?", date.beginning_of_day, date.end_of_day)
+        .where(
+          "created_at >= ? and created_at <= ?",
+          date.beginning_of_day,
+          date.end_of_day
+        ).includes(:blockers, :user)
     else
-      @standups = @team.standups.where("created_at >= ?", @todays_date.beginning_of_day)
+      @standups = @team.standups.where("created_at >= ?", @todays_date.beginning_of_day).includes(:blockers, :user)
     end
 
     @todays_standup = find_todays_standup

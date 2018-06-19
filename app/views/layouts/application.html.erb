@@ -28,7 +28,7 @@
 
       <nav class="right-nav">
         <%= yield(:navigation_links) %>
-        <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+        <%= link_to "logout", destroy_user_session_path, method: :delete %>
         <%= link_to edit_user_registration_path do %>
           <img class="current-avatar" src="<%= gravatar_url(current_user.email, 35) %>"/>
         <% end %>
